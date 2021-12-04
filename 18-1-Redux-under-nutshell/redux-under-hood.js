@@ -9,6 +9,11 @@ const counterReducer = (state = { counter: 0 }, action) => {
       counter: state.counter + 1, // based on the old state
     };
   }
+  if (action.type == "decrement") {
+    return {
+      counter: state.counter - 1, // based on the old state
+    };
+  }
   return state; //  By now, the initial state will return the original state
 };
 
@@ -17,6 +22,7 @@ const store = redux.createStore(counterReducer);
 
 //Reducer will setup the logic how to return the initial state
 console.log("init --", store.getState());
+console.log("otherGuy --", store.getState());
 
 // Define a  Subscriber of the Redux?
 const counterSubscriber = () => {
@@ -35,3 +41,4 @@ store.subscribe(counterSubscriber);
 store.subscribe(AnotherCounterSubscriber);
 
 store.dispatch({ type: "increment" });
+store.dispatch({ type: "decrement" });
