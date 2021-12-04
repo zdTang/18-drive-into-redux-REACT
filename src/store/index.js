@@ -29,6 +29,4 @@ store.subscribe(counterSubscriber);
 // store dispatch Action
 store.dispatch({ type: "increment" });
 
-
-
 */
