@@ -3,6 +3,7 @@ const redux = require("redux");
 //reducer will be called by Redux library
 //inputs:  old state + Dispatched Action
 const counterReducer = (state = { counter: 0 }, action) => {
+  console.log("action", action);
   return {
     counter: state.counter + 1, // based on the old state
   };
